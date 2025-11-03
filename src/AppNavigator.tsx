@@ -2,20 +2,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import {HomeScreen} from './screens/HomeScreen';
 import {LoginScreen} from './screens/LoginScreen.tsx';
+import { PhoneInputArea } from './components/PhoneInputArea.tsx';
 
 export const AppNavigator  = () => {
   const Stack = createNativeStackNavigator();
 
-  let isSignIn= false;
+  let isSignIn= true;
 
   return (
     <NavigationContainer>
     <Stack.Navigator>
       {
         isSignIn ? (
-          <Stack.Screen name="Home" component={HomeScreen}
+          <Stack.Screen name="PhoneInputArea" component={PhoneInputArea}
           options={{
-            title:'请登录'
+            title:'login in phone'
           }}/>
 
         ) : (

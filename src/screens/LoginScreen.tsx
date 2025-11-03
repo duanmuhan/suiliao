@@ -47,9 +47,6 @@ export const LoginScreen = () => {
         style={styles.loginButton}
         appearance="filled"
         status="primary"
-        accessoryLeft = {
-          <Icon  name="phone" pack="eva" width={24} height={24} />
-        }
       />
       {/* 注册提示 */}
       <Layout style={styles.registerContainer}>
