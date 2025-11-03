@@ -1,128 +1,211 @@
-import React from 'react';
-import { Animated, StyleSheet } from 'react-native';
-import {
-  Layout,
-  Text,
-  Button,
-  Icon,
-  useTheme,
-} from '@ui-kitten/components';
-import Image = Animated.Image;
-
-// 模拟图片资源（实际项目中替换为真实路径）
-
-export const LoginScreen = () => {
-  const theme = useTheme(); // 获取UI Kitten主题
-  const avatar1 = require('../assets/avatar1.png');
-  const avatar2 = require('../assets/avatar2.png');
-  const avatar3 = require('../assets/avatar3.png');
+import React from "react";
+import {View, ScrollView, ImageBackground, Text, Image, StyleSheet, } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
+export default () => {
   return (
-    <Layout style={styles.container} level="1">
-      {/* 头像层叠区域 */}
-      <Layout style={styles.avatarsContainer}>
-        <Image
-          source={avatar1}
-          style={[styles.avatar, styles.largeAvatar]}
-          resizeMode="cover"
-        />
-        <Image
-          source={avatar2}
-          style={[styles.avatar, styles.mediumAvatar]}
-          resizeMode="cover"
-        />
-        <Image
-          source={avatar3}
-          style={[styles.avatar, styles.smallAvatar]}
-          resizeMode="cover"
-        />
-      </Layout>
-
-      {/* 标题文本 */}
-      <Text style={styles.title} category="h4" status="primary">
-        开始找您的聊天搭子
-      </Text>
-
-      {/* 手机号登录按钮 */}
-      <Button
-        style={styles.loginButton}
-        appearance="filled"
-        status="primary"
-      />
-      {/* 注册提示 */}
-      <Layout style={styles.registerContainer}>
-        <Text category="p2" style={styles.registerText}>
-          还没有账号？
-          <Text style={styles.registerLink} status="primary">
-            注册
+    <SafeAreaView style={styles.container}>
+      <ScrollView  style={styles.scrollView}>
+        <ImageBackground
+          source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/yh4df273_expires_30_days.png"}}
+          resizeMode = {'stretch'}
+        >
+          <View style={styles.row}>
+            <Text style={styles.text}>
+              {"9:41"}
+            </Text>
+            <View style={styles.box} />
+            <Image
+              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/vqdvplyx_expires_30_days.png"}}
+              resizeMode = {"stretch"}
+              style={styles.image}
+            />
+            <Image
+              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/ntki79ye_expires_30_days.png"}}
+              resizeMode = {"stretch"}
+              style={styles.image2}
+            />
+            <Image
+              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/1lq1p4a1_expires_30_days.png"}}
+              resizeMode = {"stretch"}
+              style={styles.image3}
+            />
+          </View>
+          <View style={styles.row2}>
+            <Image
+              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/4z7r9vwl_expires_30_days.png"}}
+              resizeMode = {"stretch"}
+              style={styles.image4}
+            />
+            <View style={styles.view}>
+              <View style={styles.box2} />
+            </View>
+          </View>
+          <Text style={styles.text2}>
+            {"验证码登录"}
           </Text>
-        </Text>
-      </Layout>
-    </Layout>
-  );
-};
-
+          <Text style={styles.text3}>
+            {"We'll need your phone number to send an OTP for verification."}
+          </Text>
+          <View style={styles.row3}>
+            <Image
+              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/u9zaqxvy_expires_30_days.png"}}
+              resizeMode = {"stretch"}
+              style={styles.image5}
+            />
+            <Text style={styles.text4}>
+              {"+91"}
+            </Text>
+            <Image
+              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/lju305iz_expires_30_days.png"}}
+              resizeMode = {"stretch"}
+              style={styles.image6}
+            />
+            <View style={styles.box3} />
+            <Text style={styles.text5}>
+              {"Enter phone number"}
+            </Text>
+          </View>
+          <View style={styles.view2}>
+            <Text style={styles.text6}>
+              {"Continue"}
+            </Text>
+          </View>
+          <Image
+            source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/1nwot3y5_expires_30_days.png"}}
+            resizeMode = {"stretch"}
+            style={styles.image7}
+          />
+        </ImageBackground>
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 24,
-    backgroundColor: '#FFFFFF', // 浅蓝色背景
+    backgroundColor: "#FFFFFF",
   },
-  avatarsContainer: {
-    position: 'absolute',
-    top: 0,
-    width: '100%',
-    alignItems: 'center',
+  box: {
+    flex: 1,
   },
-  avatar: {
-    borderRadius: 100, // 圆形头像
-    borderWidth: 2,
-    borderColor: 'white',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+  box2: {
+    width: 22,
+    height: 8,
+    backgroundColor: "#0088FF",
+    borderRadius: 50,
   },
-  largeAvatar: {
-    width: 120,
-    height: 120,
-    marginBottom: 0,
-    zIndex: 3,
+  box3: {
+    width: 1,
+    height: 30,
+    backgroundColor: "#D8D8D8",
+    marginRight: 10,
   },
-  mediumAvatar: {
-    width: 90,
-    height: 90,
-    marginLeft: 120,
-    marginTop: 0,
-    zIndex: 2,
+  image: {
+    width: 17,
+    height: 10,
+    marginRight: 5,
   },
-  smallAvatar: {
-    width: 60,
-    height: 60,
-    marginRight: 100,
-    marginTop: -30,
-    zIndex: 1,
+  image2: {
+    width: 15,
+    height: 11,
+    marginRight: 5,
   },
-  title: {
-    marginVertical: 40,
-    color: '#100e0e',
-    fontWeight: 'bold',
+  image3: {
+    width: 24,
+    height: 11,
   },
-  loginButton: {
-    width: '100%',
-    borderRadius: 25,
-    paddingVertical: 8,
+  image4: {
+    width: 24,
+    height: 24,
+    marginRight: 53,
   },
-  registerContainer: {
-    marginTop: 24,
+  image5: {
+    borderRadius: 50,
+    width: 38,
+    height: 38,
+    marginRight: 5,
   },
-  registerText: {
-    color: '#666',
+  image6: {
+    borderRadius: 50,
+    width: 7,
+    height: 3,
+    marginRight: 11,
   },
-  registerLink: {
-    fontWeight: '600',
-    textDecorationLine: 'underline',
+  image7: {
+    height: 341,
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 13,
+    marginBottom: 25,
+    marginHorizontal: 21,
+  },
+  row2: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 42,
+    marginLeft: 20,
+  },
+  row3: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 50,
+    paddingVertical: 9,
+    paddingHorizontal: 10,
+    marginBottom: 32,
+    marginHorizontal: 25,
+  },
+  scrollView: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    paddingTop: 1,
+  },
+  text: {
+    color: "#000000",
+    fontSize: 15,
+  },
+  text2: {
+    color: "#000000",
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 14,
+    marginLeft: 54,
+  },
+  text3: {
+    color: "#333333",
+    fontSize: 14,
+    textAlign: "center",
+    marginBottom: 28,
+    marginHorizontal: 48,
+  },
+  text4: {
+    color: "#000000",
+    fontSize: 14,
+    marginRight: 9,
+  },
+  text5: {
+    color: "#888888",
+    fontSize: 15,
+  },
+  text6: {
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  view: {
+    backgroundColor: "#FFE9F1",
+    borderRadius: 50,
+    paddingRight: 158,
+  },
+  view2: {
+    backgroundColor: "#FF5069",
+    borderRadius: 50,
+    paddingVertical: 17,
+    paddingLeft: 30,
+    marginBottom: 96,
+    marginHorizontal: 25,
   },
 });

@@ -7,7 +7,7 @@ import { PhoneInputArea } from './components/PhoneInputArea.tsx';
 export const AppNavigator  = () => {
   const Stack = createNativeStackNavigator();
 
-  let isSignIn= true;
+  let isSignIn= false;
 
   return (
     <NavigationContainer>
