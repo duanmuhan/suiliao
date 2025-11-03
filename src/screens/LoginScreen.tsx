@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF', // 浅蓝色背景
   },
   avatarsContainer: {
-    position: 'relative',
-    top: 80,
+    position: 'absolute',
+    top: 0,
     width: '100%',
     alignItems: 'center',
   },
@@ -91,14 +91,14 @@ const styles = StyleSheet.create({
   largeAvatar: {
     width: 120,
     height: 120,
-    marginBottom: -40,
+    marginBottom: 0,
     zIndex: 3,
   },
   mediumAvatar: {
     width: 90,
     height: 90,
-    marginLeft: 80,
-    marginTop: 20,
+    marginLeft: 120,
+    marginTop: 0,
     zIndex: 2,
   },
   smallAvatar: {
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginVertical: 40,
+    color: '#100e0e',
     fontWeight: 'bold',
   },
   loginButton: {
