@@ -19,7 +19,13 @@ export const AppNavigator  = () => {
           }}/>
 
         ) : (
-          <Stack.Screen name="LoginScreen" component={LoginScreen}/>
+          <Stack.Screen name="LoginScreen" component={LoginScreen}
+          options={
+            {
+              title:'请使用手机号登录'
+            }
+          }
+          />
         )
       }
     </Stack.Navigator>
