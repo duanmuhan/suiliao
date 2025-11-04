@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ScrollView, ImageBackground, Text, Image, StyleSheet, } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-export const AgeScreen = (props) => {
+export const AgeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView  style={styles.scrollView}>
@@ -13,8 +13,7 @@ export const AgeScreen = (props) => {
             <Text style={styles.text}>
               {"9:41"}
             </Text>
-            <View style={styles.box}>
-            </View>
+            <View style={styles.box} />
             <Image
               source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/166romfc_expires_30_days.png"}}
               resizeMode = {"stretch"}
@@ -38,8 +37,7 @@ export const AgeScreen = (props) => {
               style={styles.image4}
             />
             <View style={styles.view}>
-              <View style={styles.box2}>
-              </View>
+              <View style={styles.box2} />
             </View>
           </View>
           <Text style={styles.text2}>
@@ -63,13 +61,11 @@ export const AgeScreen = (props) => {
               <Text style={styles.text6}>
                 {"32"}
               </Text>
-              <View style={styles.absoluteBox}>
-              </View>
+              <View style={styles.absoluteBox} />
             </View>
           </View>
           <View style={styles.view2}>
-            <View style={styles.box3}>
-            </View>
+            <View style={styles.box3} />
           </View>
           <View style={styles.view2}>
             <Text style={styles.text7}>
