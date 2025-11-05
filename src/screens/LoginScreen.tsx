@@ -1,41 +1,12 @@
 import React from "react";
 import {View, ScrollView, ImageBackground, Text, Image, StyleSheet, } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-export default () => {
+export const LoginScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView  style={styles.scrollView}>
-        <ImageBackground
-          source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/yh4df273_expires_30_days.png"}}
-          resizeMode = {'stretch'}
-        >
-          <View style={styles.row}>
-            <Text style={styles.text}>
-              {"9:41"}
-            </Text>
-            <View style={styles.box} />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/vqdvplyx_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/ntki79ye_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image2}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/1lq1p4a1_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image3}
-            />
-          </View>
+        <ImageBackground source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/yh4df273_expires_30_days.png"}} resizeMode = {'stretch'}>
           <View style={styles.row2}>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/4z7r9vwl_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image4}
-            />
             <View style={styles.view}>
               <View style={styles.box2} />
             </View>
@@ -194,6 +165,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "bold",
+    textAlign: "center",
   },
   view: {
     backgroundColor: "#FFE9F1",
@@ -207,5 +179,6 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     marginBottom: 96,
     marginHorizontal: 25,
+    alignItems: "center",
   },
 });
