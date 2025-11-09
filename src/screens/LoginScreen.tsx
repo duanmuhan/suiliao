@@ -1,7 +1,31 @@
-import React from "react";
-import {View, ScrollView, ImageBackground, Text, Image, StyleSheet, } from "react-native";
+import React, { useState } from "react";
+import {
+  View,
+  ScrollView,
+  ImageBackground,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { CountryPicker } from 'react-native-country-picker-modal/lib/CountryPicker';
+import { Country, CountryCode } from 'react-native-country-picker-modal';
 export const LoginScreen = () => {
+
+  const [countryCode, setCountryCode] = useState<CountryCode>('CN');
+  const [callingCode, setCallingCode] = useState('86');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [countryVisible, setCountryVisible] = useState(false);
+
+
+
+  const onSelect = (country: Country) => {
+    setCountryCode(country.cca2);
+    setCallingCode(country.callingCode[0]);
+  };
+
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView  style={styles.scrollView}>
@@ -15,26 +39,31 @@ export const LoginScreen = () => {
             {"验证码登录"}
           </Text>
           <Text style={styles.text3}>
-            {"We'll need your phone number to send an OTP for verification."}
+            {"请输入您的手机号"}
           </Text>
-          <View style={styles.row3}>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/u9zaqxvy_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image5}
+          <View style={styles.inputContainer}>
+            <CountryPicker
+              countryCode={countryCode}
+              withFilter
+              withFlag
+              withCallingCode
+              withEmoji
+              onSelect={onSelect}
+              onClose={() => setCountryVisible(false)}
+              visible={countryVisible}
             />
-            <Text style={styles.text4}>
-              {"+91"}
+
+            {/* 区号 + 点击弹出选择器 */}
+            <Text style={styles.callingCode} onPress={() => setCountryVisible(true)}>
+              +{callingCode} ▼
             </Text>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/lju305iz_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image6}
-            />
-            <View style={styles.box3} />
-            <Text style={styles.text5}>
-              {"Enter phone number"}
-            </Text>
+            <View style={styles.divider} />
+            <TextInput
+              style={styles.text4}
+              placeholder="输入手机号"
+              keyboardType="phone-pad"
+              value={phoneNumber}
+              onChangeText={setPhoneNumber} />
           </View>
           <View style={styles.view2}>
             <Text style={styles.text6}>
@@ -105,6 +134,10 @@ const styles = StyleSheet.create({
   image7: {
     height: 341,
   },
+  callingCode: {
+    fontSize: 20,
+    marginRight: 10,
+  },
   row: {
     flexDirection: "row",
     alignItems: "center",
@@ -142,8 +175,9 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 14,
-    marginLeft: 54,
+    textAlign: "center",
+    marginBottom: 28,
+    marginHorizontal: 48,
   },
   text3: {
     color: "#333333",
@@ -154,7 +188,7 @@ const styles = StyleSheet.create({
   },
   text4: {
     color: "#000000",
-    fontSize: 14,
+    fontSize: 20,
     marginRight: 9,
   },
   text5: {
@@ -180,5 +214,21 @@ const styles = StyleSheet.create({
     marginBottom: 96,
     marginHorizontal: 25,
     alignItems: "center",
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#ffffff',
+    borderRadius: 12,
+    backgroundColor: '#f8f8f8',
+    marginHorizontal: 40,
+    marginBottom: 20,
+    height: 56,
+  },
+  divider: {
+    width: 1,
+    height: 24,
+    backgroundColor: '#ddd',
   },
 });
