@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     paddingRight: 158,
   },
   view2: {
-    backgroundColor: "#FF5069",
+    backgroundColor: "#354bd5",
     borderRadius: 50,
     paddingVertical: 17,
     paddingLeft: 30,
