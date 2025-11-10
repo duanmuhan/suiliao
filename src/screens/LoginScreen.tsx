@@ -17,12 +17,22 @@ export const LoginScreen = () => {
   const [callingCode, setCallingCode] = useState('86');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [countryVisible, setCountryVisible] = useState(false);
-
+  const [country, setCountry] = useState<Country>();
 
 
   const onSelect = (country: Country) => {
+    setCountry(country);
     setCountryCode(country.cca2);
     setCallingCode(country.callingCode[0]);
+  };
+
+  const getFlagEmoji = (countryCode?: string) => {
+    if (!countryCode) return '🇺🇸';
+    return countryCode
+      .toUpperCase()
+      .split('')
+      .map(c => 127397 + c.charCodeAt(0))
+      .reduce((s, cp) => s + String.fromCodePoint(cp), '');
   };
 
 
@@ -45,15 +55,17 @@ export const LoginScreen = () => {
             <CountryPicker
               countryCode={countryCode}
               withFilter
-              withFlag
+              withFlag={true}
               withCallingCode
-              withEmoji
+              withEmoji={true}
               onSelect={onSelect}
               onClose={() => setCountryVisible(false)}
               visible={countryVisible}
             />
 
-            {/* 区号 + 点击弹出选择器 */}
+            <Text style={styles.flag}>
+              {country?.cca2 ? getFlagEmoji(country.cca2) : '🇺🇸'}
+            </Text>
             <Text style={styles.callingCode} onPress={() => setCountryVisible(true)}>
               +{callingCode} ▼
             </Text>
@@ -67,7 +79,7 @@ export const LoginScreen = () => {
           </View>
           <View style={styles.view2}>
             <Text style={styles.text6}>
-              {"Continue"}
+              {"下一步"}
             </Text>
           </View>
           <Image
@@ -110,6 +122,9 @@ const styles = StyleSheet.create({
     height: 11,
     marginRight: 5,
   },
+  flag: {
+    fontSize: 28,
+  },
   image3: {
     width: 24,
     height: 11,
@@ -135,7 +150,7 @@ const styles = StyleSheet.create({
     height: 341,
   },
   callingCode: {
-    fontSize: 20,
+    fontSize: 18,
     marginRight: 10,
   },
   row: {
@@ -188,7 +203,7 @@ const styles = StyleSheet.create({
   },
   text4: {
     color: "#000000",
-    fontSize: 20,
+    fontSize: 18,
     marginRight: 9,
   },
   text5: {
