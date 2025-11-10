@@ -11,20 +11,7 @@ export const VerifyCodeScreen = () => {
           style={styles.column}
         >
           <View style={styles.row}>
-            <Text style={styles.text}>
-              {"9:41"}
-            </Text>
             <View style={styles.box}/>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/8nc1a8p8_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/777tz8tc_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image2}
-            />
             <Image
               source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/wik17ixs_expires_30_days.png"}}
               resizeMode = {"stretch"}
