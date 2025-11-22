@@ -9,33 +9,7 @@ export const AgeScreen = () => {
           source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/tdqcj5xa_expires_30_days.png"}}
           resizeMode = {'stretch'}
         >
-          <View style={styles.row}>
-            <Text style={styles.text}>
-              {"9:41"}
-            </Text>
-            <View style={styles.box} />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/166romfc_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/hekgxuhc_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image2}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/3k8dtixq_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image3}
-            />
-          </View>
           <View style={styles.row2}>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/707ts0qi_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image4}
-            />
             <View style={styles.view}>
               <View style={styles.box2} />
             </View>

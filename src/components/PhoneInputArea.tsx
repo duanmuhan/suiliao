@@ -4,12 +4,14 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+
 export const  PhoneInputArea = () => {
 
   const [phone, setPhone] = useState('');
   const [formattedValue, setFormattedValue] = useState("");
   const [valid, setValid] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+
 
   const phoneInput = useRef<PhoneInput>(null);
 

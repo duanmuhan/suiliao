@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { PhoneInputArea } from './components/PhoneInputArea.tsx';
-import { VerifyCodeScreen } from './screens/VerifyCodeScreen.tsx';
+import {AgeScreen} from './screens/AgeScreen.tsx';
 
 export const AppNavigator  = () => {
   const Stack = createNativeStackNavigator();
@@ -19,7 +19,7 @@ export const AppNavigator  = () => {
           }}/>
 
         ) : (
-          <Stack.Screen name="VerifyCodeScreen" component={VerifyCodeScreen}
+          <Stack.Screen name="AgeScreen" component={AgeScreen}
           options={
             {
               title:'请使用手机号登录'
