@@ -1,89 +1,71 @@
-import React from "react";
-import { View, ScrollView, ImageBackground, Text, Image, StyleSheet, } from "react-native";
+import WheelPicker from '@quidone/react-native-wheel-picker';
+import React, { useState } from 'react';
+import {
+  View,
+  ScrollView,
+  ImageBackground,
+  Text,
+  Image,
+  StyleSheet,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ItemType } from 'react-native-wheel-picker-expo/src/types.ts';
 export const AgeScreen = () => {
+  const age = useState(0);
+
+  // 新版 items 类型
+  const items: ItemType[] = Array.from({ length: 83 }, (_, i) => ({
+    label: `${i + 18}`,
+    value: i + 18,
+  }));
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView  style={styles.scrollView}>
+      <ScrollView style={styles.scrollView}>
         <ImageBackground
-          source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/tdqcj5xa_expires_30_days.png"}}
-          resizeMode = {'stretch'}
+          source={{
+            uri: 'https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/tdqcj5xa_expires_30_days.png',
+          }}
+          resizeMode={'stretch'}
         >
           <View style={styles.row2}>
             <View style={styles.view}>
               <View style={styles.box2} />
             </View>
           </View>
-          <Text style={styles.text2}>
-            {"请输入您的年龄"}
-          </Text>
-          <View style={styles.view2}>
-            <Text style={styles.text3}>
-              {"29"}
-            </Text>
-          </View>
-          <View style={styles.view2}>
-            <Text style={styles.text4}>
-              {"30"}
-            </Text>
-          </View>
-          <Text style={styles.text5}>
-            {"31"}
-          </Text>
-          <View style={styles.view3}>
-            <View >
-              <Text style={styles.text6}>
-                {"32"}
-              </Text>
-              <View style={styles.absoluteBox} />
-            </View>
-          </View>
-          <View style={styles.view2}>
-            <View style={styles.box3} />
-          </View>
-          <View style={styles.view2}>
-            <Text style={styles.text7}>
-              {"33"}
-            </Text>
-          </View>
-          <View style={styles.view2}>
-            <Text style={styles.text4}>
-              {"34"}
-            </Text>
-          </View>
+          <Text style={styles.text2}>{'请输入您的年龄'}</Text>
+          <WheelPicker
+            data={items}
+            value={age}
+            onValueChanged={({ item: { value } }) => console.log(value)}
+            enableScrollByTapOnItem={true}
+          />
           <View style={styles.column}>
-            <Text style={styles.text3}>
-              {"35"}
-            </Text>
             <ImageBackground
-              source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/iv0vcqr9_expires_30_days.png"}}
-              resizeMode = {'stretch'}
+              source={{
+                uri: 'https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/iv0vcqr9_expires_30_days.png',
+              }}
+              resizeMode={'stretch'}
               style={styles.view4}
-            >
-              <View style={styles.view5}>
-                <Text style={styles.text8}>
-                  {"Continue"}
-                </Text>
-              </View>
-            </ImageBackground>
+            />
           </View>
         </ImageBackground>
       </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#FFFFFF',
   },
   absoluteBox: {
-    position: "absolute",
+    position: 'absolute',
     top: 2,
     right: -27,
     left: -27,
     height: 3,
-    backgroundColor: "#FF5069",
+    backgroundColor: '#FF5069',
   },
   box: {
     flex: 1,
@@ -91,16 +73,16 @@ const styles = StyleSheet.create({
   box2: {
     width: 90,
     height: 8,
-    backgroundColor: "#FF5069",
+    backgroundColor: '#FF5069',
     borderRadius: 50,
   },
   box3: {
     width: 137,
     height: 3,
-    backgroundColor: "#FF5069",
+    backgroundColor: '#FF5069',
   },
   column: {
-    alignItems: "center",
+    alignItems: 'center',
   },
   image: {
     width: 17,
@@ -122,81 +104,80 @@ const styles = StyleSheet.create({
     marginRight: 53,
   },
   row: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginTop: 13,
     marginBottom: 25,
     marginHorizontal: 21,
   },
   row2: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 42,
     marginLeft: 20,
   },
   scrollView: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#FFFFFF',
     paddingTop: 1,
   },
   text: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 15,
   },
   text2: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 100,
-    marginLeft: 54,
-    alignContent: "center",
+    textAlign: 'center',
   },
   text3: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 32,
   },
   text4: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 40,
   },
   text5: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 48,
     marginBottom: 5,
     marginLeft: 161,
   },
   text6: {
-    color: "#0088FF",
+    color: '#0088FF',
     fontSize: 64,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   text7: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 48,
   },
   text8: {
-    color: "#FFFFFF",
+    color: '#FFFFFF',
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   view: {
-    backgroundColor: "#FFE9F1",
+    backgroundColor: '#FFE9F1',
     borderRadius: 50,
     paddingRight: 90,
   },
   view2: {
-    alignItems: "center",
+    alignItems: 'center',
   },
   view3: {
-    alignItems: "center",
+    alignItems: 'center',
     marginBottom: 2,
   },
   view4: {
     paddingHorizontal: 25,
   },
   view5: {
-    backgroundColor: "#0088FF",
+    backgroundColor: '#0088FF',
     borderRadius: 50,
     paddingVertical: 17,
     paddingLeft: 30,
