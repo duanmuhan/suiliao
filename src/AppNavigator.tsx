@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { PhoneInputArea } from './components/PhoneInputArea.tsx';
-import {AgeScreen} from './screens/AgeScreen.tsx';
+import AgeScreen from './screens/AgeScreen.tsx';
 
 export const AppNavigator  = () => {
   const Stack = createNativeStackNavigator();

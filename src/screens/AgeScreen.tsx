@@ -1,59 +1,63 @@
-import WheelPicker from '@quidone/react-native-wheel-picker';
+import WheelPicker from 'react-native-wheel-pick';
 import React, { useState } from 'react';
 import {
   View,
-  ScrollView,
   ImageBackground,
   Text,
-  Image,
   StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ItemType } from 'react-native-wheel-picker-expo/src/types.ts';
-export const AgeScreen = () => {
+import { ProgressBar } from '@ui-kitten/components';
+const AgeScreen = () => {
   const age = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
 
   // 新版 items 类型
-  const items: ItemType[] = Array.from({ length: 83 }, (_, i) => ({
+  const items = Array.from({ length: 83 }, (_, i) => ({
     label: `${i + 18}`,
     value: i + 18,
   }));
 
+  // @ts-ignore
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <ImageBackground
-          source={{
-            uri: 'https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/tdqcj5xa_expires_30_days.png',
-          }}
-          resizeMode={'stretch'}
-        >
-          <View style={styles.row2}>
-            <View style={styles.view}>
-              <View style={styles.box2} />
-            </View>
-          </View>
-          <Text style={styles.text2}>{'请输入您的年龄'}</Text>
+      <ImageBackground
+        source={{
+          uri: 'https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/tdqcj5xa_expires_30_days.png',
+        }}
+        resizeMode={'stretch'}
+      >
+        <View style={styles.row2}>
+          <ProgressBar style={styles.box2} progress={0.2} />
+        </View>
+        <Text style={styles.text2}>{'请输入您的年龄'}</Text>
+        <View style={{ height: 200 }}>
           <WheelPicker
             data={items}
             value={age}
-            onValueChanged={({ item: { value } }) => console.log(value)}
+            selectedIndex={selectedIndex}
+            onValueChanged={(value, index) => setSelectedIndex(index)}
             enableScrollByTapOnItem={true}
           />
-          <View style={styles.column}>
-            <ImageBackground
-              source={{
-                uri: 'https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/iv0vcqr9_expires_30_days.png',
-              }}
-              resizeMode={'stretch'}
-              style={styles.view4}
-            />
-          </View>
-        </ImageBackground>
-      </ScrollView>
+        </View>
+        <View style={styles.view2}>
+          <Text style={styles.text6}>{'下一步'}</Text>
+        </View>
+        <View style={styles.column}>
+          <ImageBackground
+            source={{
+              uri: 'https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/iv0vcqr9_expires_30_days.png',
+            }}
+            resizeMode={'stretch'}
+            style={styles.view4}
+          />
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
+export default AgeScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -71,10 +75,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   box2: {
-    width: 90,
-    height: 8,
-    backgroundColor: '#FF5069',
-    borderRadius: 50,
+    height: 5,
+    borderRadius: 20,
   },
   box3: {
     width: 137,
@@ -111,11 +113,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 21,
   },
   row2: {
-    alignSelf: 'flex-start',
-    flexDirection: 'row',
-    alignItems: 'center',
+    width: '90%',
+    alignSelf: 'center',
     marginBottom: 42,
-    marginLeft: 20,
   },
   scrollView: {
     flex: 1,
@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 100,
     textAlign: 'center',
   },
   text3: {
@@ -148,9 +147,10 @@ const styles = StyleSheet.create({
     marginLeft: 161,
   },
   text6: {
-    color: '#0088FF',
-    fontSize: 64,
-    fontWeight: 'bold',
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
   },
   text7: {
     color: '#000000',
@@ -167,7 +167,13 @@ const styles = StyleSheet.create({
     paddingRight: 90,
   },
   view2: {
-    alignItems: 'center',
+    backgroundColor: "#354bd5",
+    borderRadius: 50,
+    paddingVertical: 17,
+    paddingLeft: 30,
+    marginBottom: 96,
+    marginHorizontal: 25,
+    alignItems: "center",
   },
   view3: {
     alignItems: 'center',
