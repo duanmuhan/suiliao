@@ -1,4 +1,4 @@
-import WheelPicker from 'react-native-wheel-pick';
+import { WheelPicker } from 'react-native-infinite-wheel-picker';
 import React, { useState } from 'react';
 import {
   View,
@@ -7,17 +7,14 @@ import {
   StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ProgressBar } from '@ui-kitten/components';
+import { Button, ProgressBar } from '@ui-kitten/components';
 const AgeScreen = () => {
   const age = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
 
   // 新版 items 类型
-  const items = Array.from({ length: 83 }, (_, i) => ({
-    label: `${i + 18}`,
-    value: i + 18,
-  }));
+  const items = Array.from({ length: 83 }, (_, i) => i+1 )
 
   // @ts-ignore
   return (
@@ -35,15 +32,21 @@ const AgeScreen = () => {
         <View style={{ height: 200 }}>
           <WheelPicker
             data={items}
-            value={age}
+            initialSelectedIndex={4}
+            restElements={2}
+            elementHeight={30}
+            loopCount={100}
             selectedIndex={selectedIndex}
-            onValueChanged={(value, index) => setSelectedIndex(index)}
-            enableScrollByTapOnItem={true}
+            infiniteScroll={false}
+          onChangeValue={(index, value) => {
+              console.log(value);
+              setSelectedIndex(index);
+            }}
           />
         </View>
-        <View style={styles.view2}>
+        <Button style={styles.view2}>
           <Text style={styles.text6}>{'下一步'}</Text>
-        </View>
+        </Button>
         <View style={styles.column}>
           <ImageBackground
             source={{
