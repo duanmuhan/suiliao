@@ -1,6 +1,7 @@
 import React from "react";
 import {View, ScrollView, ImageBackground, Text, Image, TouchableOpacity, StyleSheet, } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Button } from '@ui-kitten/components';
 export const GenderScreen =  () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -26,7 +27,7 @@ export const GenderScreen =  () => {
           </View>
           <View style={styles.view3}>
             <Text style={styles.text3}>
-              {"Tell us about your gender"}
+              {"请选择性别"}
             </Text>
           </View>
           <View style={styles.view4}>
@@ -61,17 +62,9 @@ export const GenderScreen =  () => {
               </ImageBackground>
             </View>
           </View>
-          <ImageBackground
-            source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/vqga2kpn_expires_30_days.png"}}
-            resizeMode = {'stretch'}
-            style={styles.view5}
-          >
-            <TouchableOpacity style={styles.button} onPress={()=>console.log('Pressed!')}>
-              <Text style={styles.text6}>
-                {"Continue"}
-              </Text>
-            </TouchableOpacity>
-          </ImageBackground>
+          <Button style={styles.view6}>
+            <Text style={styles.text6}>{'下一步'}</Text>
+          </Button>
         </ImageBackground>
       </ScrollView>
     </SafeAreaView>
@@ -94,20 +87,18 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     backgroundColor: "#0088FF",
-    borderRadius: 50,
-    paddingVertical: 17,
-    marginTop: 112,
+    borderRadius: 20,
     marginBottom: 30,
   },
   column: {
-    alignSelf: "flex-start",
+    alignSelf: "center",
     alignItems: "center",
     paddingVertical: 30,
     paddingHorizontal: 46,
     marginBottom: 48,
   },
   column2: {
-    alignSelf: "flex-start",
+    alignSelf: "center",
     alignItems: "center",
     paddingVertical: 30,
     paddingHorizontal: 44,
@@ -180,10 +171,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text6: {
-    color: "#FFFFFF",
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
+    alignItems: "center",
+    backgroundColor: "#1d42d3",
+    borderRadius: 50,
+    paddingVertical: 17,
+    marginBottom: 96,
+    marginHorizontal: 25,
   },
   view: {
     backgroundColor: "#FFE9F1",
@@ -207,5 +200,15 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     marginTop: 133,
     marginBottom: 30,
+  },
+  view6: {
+    backgroundColor: "#354bd5",
+    borderRadius: 50,
+    paddingVertical: 17,
+    paddingLeft: 30,
+    marginTop: 60,
+    marginBottom: 96,
+    marginHorizontal: 25,
+    alignItems: "center",
   }
   })
