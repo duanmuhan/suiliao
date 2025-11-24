@@ -10,33 +10,10 @@ export const GenderScreen =  () => {
           resizeMode = {'stretch'}
         >
           <View style={styles.row}>
-            <Text style={styles.text}>
-              {"9:41"}
-            </Text>
             <View style={styles.box}>
             </View>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/tnha518d_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/p30xth51_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image2}
-            />
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/k2r7zy8k_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image3}
-            />
           </View>
           <View style={styles.row2}>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/berf50dp_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image4}
-            />
             <View style={styles.view}>
               <View style={styles.box2}>
               </View>
@@ -44,7 +21,7 @@ export const GenderScreen =  () => {
           </View>
           <View style={styles.view2}>
             <Text style={styles.text2}>
-              {"What’s Your Gender?"}
+              {""}
             </Text>
           </View>
           <View style={styles.view3}>
