@@ -20,7 +20,7 @@ export const AppNavigator  = () => {
           }}/>
 
         ) : (
-          <Stack.Screen name="AgeScreen" component={GenderScreen}
+          <Stack.Screen name="GenderScreen" component={GenderScreen}
           options={
             {
               title:'请使用手机号登录'
