@@ -1,7 +1,7 @@
 import React from "react";
 import {View, ScrollView, ImageBackground, Text, Image, TouchableOpacity, StyleSheet, } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button } from '@ui-kitten/components';
+import { Button, ProgressBar } from '@ui-kitten/components';
 export const GenderScreen =  () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -10,23 +10,11 @@ export const GenderScreen =  () => {
           source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/u3pccgb5_expires_30_days.png"}}
           resizeMode = {'stretch'}
         >
-          <View style={styles.row}>
-            <View style={styles.box}>
-            </View>
-          </View>
           <View style={styles.row2}>
-            <View style={styles.view}>
-              <View style={styles.box2}>
-              </View>
-            </View>
-          </View>
-          <View style={styles.view2}>
-            <Text style={styles.text2}>
-              {""}
-            </Text>
+            <ProgressBar style={styles.box2} progress={0.2} />
           </View>
           <View style={styles.view3}>
-            <Text style={styles.text3}>
+            <Text style={styles.text2}>
               {"请选择性别"}
             </Text>
           </View>
