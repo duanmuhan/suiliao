@@ -9,18 +9,7 @@ export const LabelScreen =  () => {
           source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/glfi4lun_expires_30_days.png"}}
           resizeMode = {'stretch'}
         >
-          <View style={styles.row}>
-            <View style={styles.box}>
-            </View>
-            <Image
-              source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/7kdecmbw_expires_30_days.png"}}
-              resizeMode = {"stretch"}
-              style={styles.image}
-            />
-          </View>
           <View style={styles.box2}>
-          </View>
-          <View style={styles.box3}>
           </View>
           <View style={styles.view}>
             <View style={styles.row2}>
@@ -102,12 +91,6 @@ export const LabelScreen =  () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.box4}>
-          </View>
-          <View style={styles.view2}>
-            <View style={styles.box5}>
-            </View>
-          </View>
         </ImageBackground>
       </ScrollView>
     </SafeAreaView>
@@ -142,11 +125,11 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: 'row',
-    backgroundColor: '#FF5069',
+    backgroundColor: '#0a28e8',
     borderRadius: 50,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    marginRight: 10,
+    marginRight: 20,
   },
   buttonRow2: {
     flexDirection: 'row',
@@ -168,7 +151,7 @@ const styles = StyleSheet.create({
     height: 11,
   },
   image2: {
-    borderRadius: 50,
+    borderRadius: 5,
     width: 20,
     height: 20,
     marginRight: 8,
@@ -193,11 +176,12 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    paddingTop: 1,
+    paddingTop: 2,
   },
   text: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 12,
+    textAlign: 'center',
   },
   view2: {
     alignItems: "center",
@@ -205,14 +189,12 @@ const styles = StyleSheet.create({
   },
   view: {
     backgroundColor: "#FFE9F1",
-    borderRadius: 50,
+    borderRadius: 20,
   },
   text2: {
     color: "#000000",
-    fontSize: 24,
+    fontSize: 12,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 28,
-    marginHorizontal: 48,
   },
 });

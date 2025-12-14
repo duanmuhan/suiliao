@@ -11,7 +11,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CountryPicker } from 'react-native-country-picker-modal/lib/CountryPicker';
 import { Country, CountryCode } from 'react-native-country-picker-modal';
-export const LoginScreen = () => {
+import { Button } from '@ui-kitten/components';
+export const LoginScreen = ({navigation}) => {
 
   const [countryCode, setCountryCode] = useState<CountryCode>('CN');
   const [callingCode, setCallingCode] = useState('86');
@@ -77,11 +78,11 @@ export const LoginScreen = () => {
               value={phoneNumber}
               onChangeText={setPhoneNumber} />
           </View>
-          <View style={styles.view2}>
+          <Button style={styles.view2} onPress={() => navigation.navigate('HomeScreen')}>
             <Text style={styles.text6}>
               {"下一步"}
             </Text>
-          </View>
+          </Button>
           <Image
             source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/1nwot3y5_expires_30_days.png"}}
             resizeMode = {"stretch"}
