@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CountryPicker } from 'react-native-country-picker-modal/lib/CountryPicker';
 import { Country, CountryCode } from 'react-native-country-picker-modal';
-import { Button } from '@ui-kitten/components';
+import { Button, ProgressBar } from '@ui-kitten/components';
 export const LoginScreen = ({navigation}) => {
 
   const [countryCode, setCountryCode] = useState<CountryCode>('CN');
@@ -40,11 +40,9 @@ export const LoginScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView  style={styles.scrollView}>
-        <ImageBackground source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/fWoXVVRMdp/yh4df273_expires_30_days.png"}} resizeMode = {'stretch'}>
+        <ImageBackground resizeMode = {'stretch'}>
           <View style={styles.row2}>
-            <View style={styles.view}>
-              <View style={styles.box2} />
-            </View>
+            <ProgressBar style={styles.box2} progress={0.1} />
           </View>
           <Text style={styles.text2}>
             {"验证码登录"}
@@ -78,7 +76,7 @@ export const LoginScreen = ({navigation}) => {
               value={phoneNumber}
               onChangeText={setPhoneNumber} />
           </View>
-          <Button style={styles.view2} onPress={() => navigation.navigate('HomeScreen')}>
+          <Button style={styles.view2} onPress={() => navigation.navigate('VerifyCodeScreen')}>
             <Text style={styles.text6}>
               {"下一步"}
             </Text>
@@ -102,10 +100,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   box2: {
-    width: 22,
-    height: 8,
-    backgroundColor: "#0088FF",
-    borderRadius: 50,
+    height: 5,
+    borderRadius: 20,
   },
   box3: {
     width: 1,
@@ -162,11 +158,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 21,
   },
   row2: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
+    width: '90%',
+    alignSelf: 'center',
     marginBottom: 42,
-    marginLeft: 20,
   },
   row3: {
     flexDirection: "row",

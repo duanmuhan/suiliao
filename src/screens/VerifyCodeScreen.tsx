@@ -2,7 +2,6 @@ import React from 'react';
 import {
   View,
   ScrollView,
-  ImageBackground,
   Text,
   Image,
   TouchableOpacity,
@@ -12,7 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, ProgressBar } from '@ui-kitten/components';
 
-export const VerifyCodeScreen = () => {
+export const VerifyCodeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
@@ -41,8 +40,8 @@ export const VerifyCodeScreen = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.view2}/>
-          <Button style={styles.view3}>
-            <Text style={styles.text5}>{'Verify'}</Text>
+          <Button style={styles.view3} onPress={() => navigation.navigate('HomeScreen')}>
+            <Text style={styles.text5}>{'下一步'}</Text>
           </Button>
           <Image
             source={{
